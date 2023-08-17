@@ -34,3 +34,5 @@ Route::get('contact', function(){
 Route::get('adult_counselling', function(){
     return view('adult_counseling');
 });
+
+Route::post('save_adult_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveAdultAppointment']);

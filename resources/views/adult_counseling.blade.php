@@ -27,28 +27,62 @@
             <div class="row">
                 <div class="col-md-10 half ftco-animate">
                     <h2 class="mb-4">Book an appointment!</h2>
-                    <form action="#" class="appointment">
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    <form action="{{url('save_adult_appointment')}}" method="POST" class="appointment">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name">
+                                    <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" placeholder="First Name">
+                                    @error('first_name')
+                                        <div style="color:red">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" class="form-control" name="second_name" value="{{old('second_name')}}" placeholder="Second Name">
+                                    @error('second_name')
+                                        <div style="color:red">{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Date">
+                                    <input type="text" class="form-control" name="phone" value="{{old('phone')}}" placeholder="Phone Number">
+                                    @error('phone')
+                                    <div style="color:red">{{$message}}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" value="{{old('email')}}" placeholder="Email">
+                                    @error('email')
+                                        <div style="color:red">{{$message}}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="appointment_date" value="{{old('appointment_date')}}">
+                                    @error('appointment_date')
+                                        <div style="color:red">{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <select name id class="form-control">
+                                            <select class="form-control" name="time_slot" value="{{old('time_slot')}}">
                                                 <option value="">Select time slot</option>
                                                 <option value="07:00-08:00AM">07:00-08:00AM</option>
                                                 <option value="08:00-09:00AM">08:00-09:00AM</option>
@@ -62,6 +96,9 @@
                                                 <option value="4:00-5:00PM">4:00-5:00PM</option>
                                                 <option value="5:00-6:00PM">5:00-6:00PM</option>
                                             </select>
+                                            @error('time_slot')
+                                                <div style="color:red">{{$message}}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -70,28 +107,31 @@
                                 <div class="form-group">
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <select name id class="form-control">
-                                                <option value>Select Service</option>
-                                                <option value>Relation Problem</option>
-                                                <option value>Couple Counseling</option>
-                                                <option value>Depression Treatment</option>
-                                                <option value>Family Problem</option>
-                                                <option value>Personal Problem</option>
-                                                <option value>Business Problem</option>
+                                            <select class="form-control" name="service" value="{{old('service')}}">
+                                                <option value="">Select Service</option>
+                                                <option value="Relation Problem">Relation Problem</option>
+                                                <option value="Couple Counselling">Couple Counseling</option>
+                                                <option value="Depression Treatment">Depression Treatment</option>
+                                                <option value="Family Problem">Family Problem</option>
+                                                <option value="Personal Problem">Personal Problem</option>
+                                                <option value="Business Problem">Business Problem</option>
                                             </select>
+                                            @error('service')
+                                                <div style="color:red">{{$message}}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <div class="form-group">
                                     <textarea name id cols="30" rows="7" class="form-control"
                                         placeholder="Message"></textarea>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
+                            </div>--}}
+                            <div class="col-sm-2" style="margin-left:15px">
                                 <div class="form-group">
-                                    <input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+                                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-4">
                                 </div>
                             </div>
                         </div>
