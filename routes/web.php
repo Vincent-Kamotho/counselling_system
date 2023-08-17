@@ -22,3 +22,15 @@ Route::get('about', function(){
 Route::get('counsellor', function(){
     return view('counselor');
 });
+Route::get('services', function(){
+    return view('services');
+});
+Route::get('pricing', function(){
+    return view('pricing');
+});
+Route::get('contact', function(){
+    return view('contact');
+});
+Route::get('adult_counselling', function(){
+    return view('adult_counseling');
+});

@@ -59,10 +59,9 @@
                     <li class="nav-item"><a href="{{url('/')}}" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
                     <li class="nav-item active"><a href="{{url('counsellor')}}" class="nav-link">Counselor</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="{{url('services')}}" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="{{url('pricing')}}" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -425,23 +424,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid px-0 py-5 bg-black">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="mb-0" style="color: rgba(255,255,255,.5);">
-                            Copyright &copy;<script data-cfasync="false"
-                                src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i
-                                class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com/" target="_blank">Colorlib.com</a>
-                        </p>
                     </div>
                 </div>
             </div>
