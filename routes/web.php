@@ -45,5 +45,12 @@ Route::group(['prefix' => 'children'], function(){
     Route::post('save_child_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveChildAppointment']);
 });
 
+Route::group(['prefix' => 'business'], function(){
+    Route::get('business_counselling', function(){
+        return view('business_counselling');
+    });
+    Route::post('save_business_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveBusinessAppointment']);
+});
+
 
 

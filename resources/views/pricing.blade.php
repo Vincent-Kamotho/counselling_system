@@ -115,7 +115,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Employee Counseling</li>
                                 <li><span class="fa fa-check mr-2"></span>Psychological Assessment</li>
                             </ul>
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            <a href="{{url('business/business_counselling')}}" class="btn btn-primary d-block px-2 py-3">Get Started</a>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdultCounselling;
+use App\Models\BusinessCounselling;
 use App\Models\ChildrenCounselling;
 use Illuminate\Http\Request;
 
@@ -56,5 +57,31 @@ class AppointmentsController extends Controller
 
         $children_counselling->save();
         return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
+    }
+    
+    public function SaveBusinessAppointment(Request $request)
+    {
+        $request->validate([
+            'first_name' => 'required|min:3',
+            'second_name' => 'required|min:3',
+            'phone' => 'required|regex:/^07\d{8}$/|min:10',
+            'email' => 'required|email',
+            'appointment_date' => 'required|date|after_or_equal:today',
+            'time_slot' => 'required',
+            'service'=>'required'
+        ]);
+
+        $business_counselling = new BusinessCounselling;
+        $business_counselling->first_name = $request->input('first_name');
+        $business_counselling->second_name = $request->input('second_name');
+        $business_counselling->phone_number = $request->input('phone');
+        $business_counselling->email = $request->input('email');
+        $business_counselling->appointment_date = $request->input('appointment_date');
+        $business_counselling->time_slot = $request->input('time_slot');
+        $business_counselling->service = $request->input('service');
+
+        $business_counselling->save();
+        return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
+
     }
 }
