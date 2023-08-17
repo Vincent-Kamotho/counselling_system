@@ -87,7 +87,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Couples Therapy</li>
                                 <li><span class="fa fa-check mr-2"></span>Family Therapy</li>
                             </ul>
-                            <a href="{{url('adult_counselling')}}" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            <a href="{{url('adults/adult_counselling')}}" class="btn btn-primary d-block px-2 py-3">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Behavioral Management</li>
                                 <li><span class="fa fa-check mr-2"></span>Educational Counseling</li>
                             </ul>
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            <a href="{{url('children/children_counselling')}}" class="btn btn-primary d-block px-2 py-3">Get Started</a>
                         </div>
                     </div>
                 </div>

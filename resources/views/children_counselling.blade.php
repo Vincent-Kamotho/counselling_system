@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 half ftco-animate">
-                    <h2 class="mb-4">Book an appointment!</h2>
+                    <h2 class="mb-4">Book an appointment for your child!</h2>
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('success') }}
@@ -35,7 +35,7 @@
                             </button>
                         </div>
                     @endif
-                    <form action="{{url('adults/save_adult_appointment')}}" method="POST" class="appointment">
+                    <form action="{{url('children/save_child_appointment')}}" method="POST" class="appointment">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -56,16 +56,16 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" value="{{old('phone')}}" placeholder="Phone Number">
-                                    @error('phone')
+                                    <input type="text" class="form-control" name="parent_phone" value="{{old('parent_phone')}}" placeholder="Parent/Guardian's Phone Number">
+                                    @error('parent_phone')
                                     <div style="color:red">{{$message}}</div>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" value="{{old('email')}}" placeholder="Email">
-                                    @error('email')
+                                    <input type="email" class="form-control" name="parent_email" value="{{old('parent_email')}}" placeholder="Parent's Email">
+                                    @error('parent_email')
                                         <div style="color:red">{{$message}}</div>
                                     @enderror
                                 </div>
@@ -109,12 +109,9 @@
                                         <div class="select-wrap">
                                             <select class="form-control" name="service" value="{{old('service')}}">
                                                 <option value="">Select Service</option>
-                                                <option value="Relation Problem">Relation Problem</option>
-                                                <option value="Couple Counselling">Couple Counseling</option>
                                                 <option value="Depression Treatment">Depression Treatment</option>
                                                 <option value="Family Problem">Family Problem</option>
                                                 <option value="Personal Problem">Personal Problem</option>
-                                                <option value="Business Problem">Business Problem</option>
                                             </select>
                                             @error('service')
                                                 <div style="color:red">{{$message}}</div>

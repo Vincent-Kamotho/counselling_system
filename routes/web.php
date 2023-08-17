@@ -31,8 +31,19 @@ Route::get('pricing', function(){
 Route::get('contact', function(){
     return view('contact');
 });
-Route::get('adult_counselling', function(){
-    return view('adult_counseling');
+Route::group(['prefix' => 'adults'], function(){
+    Route::get('adult_counselling', function(){
+        return view('adult_counseling');
+    });
+    Route::post('save_adult_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveAdultAppointment']);
 });
 
-Route::post('save_adult_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveAdultAppointment']);
+Route::group(['prefix' => 'children'], function(){
+    Route::get('children_counselling', function(){
+        return view('children_counselling');
+    });
+    Route::post('save_child_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveChildAppointment']);
+});
+
+
+
