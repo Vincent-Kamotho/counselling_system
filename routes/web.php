@@ -52,5 +52,8 @@ Route::group(['prefix' => 'business'], function(){
     Route::post('save_business_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveBusinessAppointment']);
 });
 
+Route::get('admin/home', function(){
+    return view('admin.dashboard');
+});
 
 
