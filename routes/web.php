@@ -57,3 +57,7 @@ Route::get('admin/home', function(){
 });
 
 
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('adult_appointments', [App\Http\Controllers\Admin\AdultAppointments::class, 'index']);
+});
+

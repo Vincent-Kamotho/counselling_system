@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-
 <head>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Sales</title>
+    <title>Adult Appointment</title>
 
 
     <link rel="stylesheet" href="{{asset('assets/admin/css/bootstrap1.min.css')}}" />
@@ -42,35 +41,90 @@
     <link rel="stylesheet" href="{{asset('assets/admin/css/style1.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/admin/css/colors/default.css')}}" id="colorSkinCSS">
 </head>
+
 <body class="crm_body_bg">
     @include('admin.layouts.sidebar')
 
     <section class="main_content dashboard_part large_header_bg">
         @include('admin.layouts.header')
 
-        <div class="main_content_iner overly_inner ">
+        <div class="main_content_iner">
             <div class="container-fluid p-0 ">
-        
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page_title_box d-flex align-items-center justify-content-between">
-                            <div class="page_title_left">
-                                <h3 class="f_s_30 f_w_700 text_white">Dashboard</h3>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="white_card card_height_100 mb_30">
+                            <div class="white_card_header">
+                                <div class="box_header m-0">
+                                    <div class="main-title">
+                                        <h3 class="m-0">Appointments</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white_card_body">
+                                <div class="QA_section">
+                                    <div class="white_box_tittle list_header">
+                                        <h4>Adult Appointments</h4>
+                                        <div class="box_right d-flex lms_block">
+                                            <div class="serach_field_2">
+                                                <div class="search_inner">
+                                                    <form active="#">
+                                                        <div class="search_field">
+                                                            <input type="text" placeholder="Search content here...">
+                                                        </div>
+                                                        <button type="submit"> <i class="ti-search"></i> </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="QA_table mb_30">
+
+                                        <table class="table lms_table_active ">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Second Name</th>
+                                                    <th scope="col">Phone Number</th>
+                                                    
+                                                    <th scope="col">Appointment Date</th>
+                                                    <th scope="col">Time Slot</th>
+                                                    <th scope="col">Service</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @foreach ($adult_appointment as $appointment)
+                                                <tr>
+                                                    <td>{{$appointment->first_name}}</td>
+                                                    <td>{{$appointment->second_name}}</td>
+                                                    <td>{{$appointment->phone_number}}</td>
+                                                    
+                                                    <td>{{$appointment->appointment_date}}</td>
+                                                    <td>{{$appointment->time_slot}}</td>
+                                                    <td>{{$appointment->service}}</td>
+                                                    <td>
+                                                        <a href="" class="btn btn-success">Approve</a>
+                                                        <a href="" class="btn btn-danger">Decline</a>
+                                                    </td>
+                                                </tr>
+                                                    
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
 
     </section>
 
     <script src="{{asset('assets/admin/js/jquery1-3.4.1.min.js')}}"></script>
 
-    {{-- <script src="{{asset('assets/admin/js/popper1.min.js')}}"></script> --}}
-
-    {{-- <script src="{{asset('assets/admin/js/bootstrap.min.html')}}"></script> --}}
 
     <script src="{{asset('assets/admin/js/metisMenu.js')}}"></script>
 
@@ -125,4 +179,5 @@
     <script src="{{asset('assets/admin/js/dashboard_init.js')}}"></script>
     <script src="{{asset('assets/admin/js/custom.js')}}"></script>
 </body>
+
 </html>
