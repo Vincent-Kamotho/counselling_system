@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\AdultCounselling;
+use App\Models\BusinessCounselling;
+use App\Models\ChildrenCounselling;
 use Illuminate\Http\Request;
+use App\Models\AdultCounselling;
+use App\Http\Controllers\Controller;
 
-class AdultAppointments extends Controller
+class Appointments extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +17,27 @@ class AdultAppointments extends Controller
      */
     public function index()
     {
+        //
+    }
+
+    public function AdultAppointment()
+    {
         $adult_appointment = AdultCounselling::all();
         return view('admin.adultappointment.appointment')->with('adult_appointment' , $adult_appointment);
     }
 
+    public function ChildrenAppointment()
+    {
+        $children_appointment = ChildrenCounselling::all();
+        return view('admin.childrenappointment.appointment')->with('children_appointment' , $children_appointment);
+    }
+
+    public function BusinessAppointment()
+    {
+        $business_appointment = BusinessCounselling::all();
+        return view('admin.businessappointment.appointment')->with('business_appointment' , $business_appointment);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *

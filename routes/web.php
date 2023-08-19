@@ -58,6 +58,8 @@ Route::get('admin/home', function(){
 
 
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('adult_appointments', [App\Http\Controllers\Admin\AdultAppointments::class, 'index']);
+    Route::get('adult_appointments', [App\Http\Controllers\Admin\Appointments::class, 'AdultAppointment']);
+    Route::get('children_appointments', [App\Http\Controllers\Admin\Appointments::class , 'ChildrenAppointment']);
+    Route::get('business_appointments', [App\Http\Controllers\Admin\Appointments::class, 'BusinessAppointment']);
 });
 
