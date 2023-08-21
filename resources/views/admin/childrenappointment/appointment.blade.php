@@ -87,7 +87,6 @@
                                                     <th scope="col">First Name</th>
                                                     <th scope="col">Second Name</th>
                                                     <th scope="col">Parents Phone</th>
-                                                    
                                                     <th scope="col">Appointment Date</th>
                                                     <th scope="col">Time Slot</th>
                                                     <th scope="col">Service</th>
@@ -101,7 +100,6 @@
                                                     <td>{{$appointment->first_name}}</td>
                                                     <td>{{$appointment->second_name}}</td>
                                                     <td>{{$appointment->parents_phone}}</td>
-                                                    
                                                     <td>{{$appointment->appointment_date}}</td>
                                                     <td>{{$appointment->time_slot}}</td>
                                                     <td>{{$appointment->service}}</td>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReceiveMail;
+use Illuminate\Http\Request;
 use App\Models\AdultCounselling;
 use App\Models\BusinessCounselling;
 use App\Models\ChildrenCounselling;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentsController extends Controller
 {
@@ -83,5 +85,50 @@ class AppointmentsController extends Controller
         $business_counselling->save();
         return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
 
+    }
+
+    public function receivemail(Request $request)
+    {
+        // $name = $request->input('name');
+        // $email = $request->input('email');
+        // $subject = $request->input('subject');
+        // $message = $request->input('message');
+
+        // Mail::to($email)
+        // ->send(new ReceiveMail());
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+
+        if($this->isOnline()){
+            $mail_data = [
+                'recipient' => 'vinsentwambugu@gmail.com',
+                'fromEmail' => $request->email,
+                'fromName' => $request->name,
+                'subject' => $request->subject,
+                'message' => $request->message
+            ];
+            \Mail::send('mail.receivemail',$mail_data, function($message) use ($mail_data){
+                $message->to($mail_data['recipient'])
+                        ->from($mail_data['fromEmail'], $mail_data['fromName'])
+                        ->subject($mail_data['subject']);
+            });
+
+            return redirect()->back()->with('success' , 'Email sent');
+        }else{
+            return redirect()->back()->withInput()->with('error', 'Check your internet connection'); 
+        }
+    }
+
+    public function isOnline($site = "https://youtube.com/"){
+        if(@fopen($site, "r")){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

@@ -136,7 +136,8 @@
                             <div class="col-md-7">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h3 class="mb-4">Contact Us</h3>
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <form method="POST" action="{{url('email')}}" class="contactForm">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -161,7 +162,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="#">Message</label>
+                                                    <label class="label" for="message">Message</label>
                                                     <textarea name="message" class="form-control" id="message" cols="30"
                                                         rows="4" placeholder="Message"></textarea>
                                                 </div>
