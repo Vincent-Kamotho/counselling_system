@@ -32,27 +32,19 @@
                 <li><a href="{{url('admin/business_appointments')}}">Business</a></li>
             </ul>
         </li>
-        {{-- <li class>
+        <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{{asset('assets/admin/img/menu-icon/3.svg')}}" alt>
                 </div>
-                <span>UI Kits</span>
+                <span>My Schedule</span>
             </a>
             <ul>
-                <li><a href="colors.html">colors</a></li>
-                <li><a href="Alerts.html">Alerts</a></li>
-                <li><a href="buttons.html">Buttons</a></li>
-                <li><a href="modal.html">modal</a></li>
-                <li><a href="dropdown.html">Droopdowns</a></li>
-                <li><a href="Badges.html">Badges</a></li>
-                <li><a href="Loading_Indicators.html">Loading Indicators</a></li>
-                <li><a href="State_color.html">State color</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="datepicker.html">Date Picker</a></li>
+                <li><a href="{{url('admin/schedule')}}">Appointments</a></li>
+                
             </ul>
         </li>
-        <li class>
+        {{-- <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{{asset('assets/admin/img/menu-icon/4.svg')}}" alt>

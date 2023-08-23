@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\BusinessCounselling;
-use App\Models\ChildrenCounselling;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\AdultCounselling;
+use Illuminate\Support\Facades\DB;
+use App\Models\BusinessCounselling;
+use App\Models\ChildrenCounselling;
 use App\Http\Controllers\Controller;
 
 class Appointments extends Controller
@@ -36,6 +38,109 @@ class Appointments extends Controller
     {
         $business_appointment = BusinessCounselling::all();
         return view('admin.businessappointment.appointment')->with('business_appointment' , $business_appointment);
+    }
+
+    public function ApproveAdultAppointment($id)
+    {
+        $appointmentApproval = DB::table('adult_counsellings')->where('id' , $id)->get();
+
+        $approvedRecord = $appointmentApproval->map(function ($record){
+            $record->status = 'Approved';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($approvedRecord);
+
+        DB::table('adult_counsellings')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success','Appointment Approved');
+    }
+
+    public function DeclineAdultAppointment($id)
+    {
+        $appointmentDecline = DB::table('adult_counsellings')->where('id' , $id)->get();
+
+        $declinedRecord = $appointmentDecline->map(function ($record){
+            $record->status = 'Declined';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($declinedRecord);
+
+        DB::table('adult_counsellings')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success','Appointment Declined');
+    }
+
+    public function ApproveChildrenAppointment($id)
+    {
+        $appointmentApprove = DB::table('children_counsellings')->where('id' , $id)->get();
+
+        $approvedRecord = $appointmentApprove->map(function($record){
+            $record->status = 'Approved';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($approvedRecord);
+
+        DB::table('children_counsellings')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success','Appointment Approved');
+    }
+
+    public function DeclineChildrenAppointment($id)
+    {
+        $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->get();
+
+        $declinedRecord = $appointmentDecline->map(function($record){
+            $record->status = 'Declined';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($declinedRecord);
+
+        DB::table('children_counsellings')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success','Appointment Declined');
+    }
+
+    public function ApproveBusinessAppointment($id)
+    {
+        $appointmentApproval = DB::table('business_counsellings')->where('id' , $id)->get();
+
+        $approvedRecord = $appointmentApproval->map(function($record){
+            $record->status = 'Approved';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($approvedRecord);
+
+        DB::table('business_counsellings')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success', 'Appointment Approved');
+    }
+
+    public function DeclineBusinessAppointment($id)
+    {
+        $appointmentDecline = DB::table('business_counsellings')->where('id' , $id)->get();
+
+        $declinedRecord = $appointmentDecline->map(function($record){
+            $record->status = 'Declined';
+            return (array) $record;
+        })->all();
+
+        DB::table('appointments')->insert($declinedRecord);
+
+        DB::table('business_counselling')->where('id' , $id)->delete();
+
+        return redirect()->back()->with('success','Appointment Declined');
+    }
+
+    public function schedule()
+    {
+        $schedule = Appointment::all();
+        
+        return view('admin.schedule.appointments')->with('schedule' , $schedule);
     }
     
     /**

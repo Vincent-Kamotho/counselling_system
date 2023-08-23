@@ -43,6 +43,7 @@
 </head>
 
 <body class="crm_body_bg">
+    
     @include('admin.layouts.sidebar')
 
     <section class="main_content dashboard_part large_header_bg">
@@ -57,19 +58,14 @@
                             <div class="white_card_header">
                                 <div class="box_header m-0">
                                     <div class="main-title">
-                                        <h3 class="m-0">Appointments</h3>
+                                        <h3 class="m-0">Schedule</h3>
                                     </div>
-                                    @if(session()->has('message'))
-                                        <div class="alert alert-success">
-                                            {{ session()->get('message') }}
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
                             <div class="white_card_body">
                                 <div class="QA_section">
                                     <div class="white_box_tittle list_header">
-                                        <h4>Children Appointments</h4>
+                                        <h4>Scheduled Appointments</h4>
                                         <div class="box_right d-flex lms_block">
                                             <div class="serach_field_2">
                                                 <div class="search_inner">
@@ -89,32 +85,32 @@
                                         <table class="table lms_table_active ">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">First Name</th>
-                                                    <th scope="col">Second Name</th>
-                                                    <th scope="col">Parents Phone</th>
+                                                    <th scope="col">Names</th>
+                                                    <th scope="col">Phone Number</th>
                                                     <th scope="col">Appointment Date</th>
                                                     <th scope="col">Time Slot</th>
                                                     <th scope="col">Service</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col">Status</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                @foreach ($children_appointment as $appointment)
+                                                @foreach ($schedule as $schedule)
                                                 <tr>
-                                                    <td>{{$appointment->first_name}}</td>
-                                                    <td>{{$appointment->second_name}}</td>
-                                                    <td>{{$appointment->parents_phone}}</td>
-                                                    <td>{{$appointment->appointment_date}}</td>
-                                                    <td>{{$appointment->time_slot}}</td>
-                                                    <td>{{$appointment->service}}</td>
+                                                    <td>{{$schedule->first_name}} {{$schedule->second_name}}</td>
+                                                    <td>{{$schedule->phone_number}}</td>
+                                                    <td>{{$schedule->appointment_date}}</td>
+                                                    <td>{{$schedule->time_slot}}</td>
+                                                    <td>{{$schedule->service}}</td>
                                                     <td>
-                                                        <a href="{{url('admin/approve_child_appointment/'.$appointment->id)}}" class="btn btn-success">Approve</a>
-                                                        <a href="{{url('admin/decline_child_appointment/'.$appointment->id)}}" class="btn btn-danger">Decline</a>
+                                                        @if ($schedule->status === 'Approved')
+                                                            <span class="badge bg-success">{{$schedule->status}}</span>
+                                                        @else
+                                                            <span class="badge bg-danger">{{$schedule->status}}</span>
+                                                        @endif
                                                     </td>
-                                                </tr>
-                                                    
-                                                @endforeach
+                                                </tr>   
+                                                @endforeach 
                                             </tbody>
                                         </table>
                                     </div>
@@ -123,24 +119,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
 
     </section>
 
     <script src="{{asset('assets/admin/js/jquery1-3.4.1.min.js')}}"></script>
-
-
     <script src="{{asset('assets/admin/js/metisMenu.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/count_up/jquery.waypoints.min.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/chartlist/Chart.min.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/count_up/jquery.counterup.min.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/niceselect/js/jquery.nice-select.min.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/owl_carousel/js/owl.carousel.min.js')}}"></script>
-
     <script src="{{asset('assets/admin/vendors/datatable/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/admin/vendors/datatable/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('assets/admin/vendors/datatable/js/dataTables.buttons.min.js')}}"></script>
@@ -182,5 +173,3 @@
     <script src="{{asset('assets/admin/js/dashboard_init.js')}}"></script>
     <script src="{{asset('assets/admin/js/custom.js')}}"></script>
 </body>
-
-</html>

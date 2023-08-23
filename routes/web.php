@@ -52,6 +52,12 @@ Route::group(['prefix' => 'business'], function(){
     Route::post('save_business_appointment', [App\Http\Controllers\AppointmentsController::class, 'SaveBusinessAppointment']);
 });
 
+Route::group(['prefix' => 'schedule'], function(){
+    Route::get('appointments', function(){
+        return view('admin.schedule.appointments');
+    });
+});
+
 Route::get('admin/home', function(){
     return view('admin.dashboard');
 });
@@ -59,8 +65,15 @@ Route::get('admin/home', function(){
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('adult_appointments', [App\Http\Controllers\Admin\Appointments::class, 'AdultAppointment']);
+    Route::get('approve_adult_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'ApproveAdultAppointment']);
+    Route::get('decline_adult_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'DeclineAdultAppointment']);
+    Route::get('approve_child_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'ApproveChildrenAppointment']);
+    Route::get('decline_child_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'DeclineChildrenAppointment']);
+    Route::get('approve_business_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'ApproveBusinessAppointment']);
+    Route::get('decline_business_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class,'DeclineBusinessAppointment']);
     Route::get('children_appointments', [App\Http\Controllers\Admin\Appointments::class , 'ChildrenAppointment']);
     Route::get('business_appointments', [App\Http\Controllers\Admin\Appointments::class, 'BusinessAppointment']);
+    Route::get('schedule', [App\Http\Controllers\Admin\Appointments::class, 'schedule']);
 });
 
 Route::post('email', [App\Http\Controllers\AppointmentsController::class, 'receivemail']);

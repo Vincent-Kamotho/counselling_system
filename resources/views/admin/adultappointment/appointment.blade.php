@@ -59,6 +59,11 @@
                                     <div class="main-title">
                                         <h3 class="m-0">Appointments</h3>
                                     </div>
+                                    @if(session()->has('message'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('message') }}
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="white_card_body">
@@ -84,10 +89,8 @@
                                         <table class="table lms_table_active ">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">First Name</th>
-                                                    <th scope="col">Second Name</th>
+                                                    <th scope="col">Names</th>
                                                     <th scope="col">Phone Number</th>
-                                                    
                                                     <th scope="col">Appointment Date</th>
                                                     <th scope="col">Time Slot</th>
                                                     <th scope="col">Service</th>
@@ -98,16 +101,14 @@
                                             <tbody>
                                                 @foreach ($adult_appointment as $appointment)
                                                 <tr>
-                                                    <td>{{$appointment->first_name}}</td>
-                                                    <td>{{$appointment->second_name}}</td>
+                                                    <td>{{$appointment->first_name}} {{$appointment->second_name}}</td>
                                                     <td>{{$appointment->phone_number}}</td>
-                                                    
                                                     <td>{{$appointment->appointment_date}}</td>
                                                     <td>{{$appointment->time_slot}}</td>
                                                     <td>{{$appointment->service}}</td>
                                                     <td>
-                                                        <a href="" class="btn btn-success">Approve</a>
-                                                        <a href="" class="btn btn-danger">Decline</a>
+                                                        <a href="{{url('admin/approve_adult_appointment/'.$appointment->id)}}" class="btn btn-success">Approve</a>
+                                                        <a href="{{url('admin/decline_adult_appointment/'.$appointment->id)}}" class="btn btn-danger">Decline</a>
                                                     </td>
                                                 </tr>
                                                     
@@ -120,6 +121,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
 
     </section>
 
