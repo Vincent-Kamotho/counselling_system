@@ -177,51 +177,31 @@
     <footer class="ftco-footer">
         <div class="container">
             <div class="row mb-5">
+                
                 <div class="col-sm-12 col-md">
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Explore</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>What We Do</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('/')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                            <li><a href="{{url('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                            <li><a href="{{url('counsellor')}}"><span class="fa fa-chevron-right mr-2"></span>Counselor</a></li>
+                            <li><a href="{{url('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                            <li><a href="{{url('pricing')}}"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Legal</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Join us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Company</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
+                
                 <div class="col-sm-12 col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
-                                        View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
-                                            210</span></a></li>
-                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                                <li><a href="tel:0708683439"><span class="icon fa fa-phone"></span><span class="text">+254 708 683 439</span></a></li>
+                                <li><a href="mailto:vincentwambuguvw97@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span
                                             class="text"><span class="__cf_email__"
-                                                data-cfemail="0960676f664970667c7b6d6664686067276a6664">[email&#160;protected]</span></span></a>
+                                                data-cfemail="e68f888089a69f89939482898b878f88c885898b">vincentwambuguvw97@gmail.com</span></span></a>
                                 </li>
                             </ul>
                         </div>

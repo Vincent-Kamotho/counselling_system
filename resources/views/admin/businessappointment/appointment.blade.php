@@ -64,7 +64,7 @@
                             <div class="white_card_body">
                                 <div class="QA_section">
                                     <div class="white_box_tittle list_header">
-                                        <h4>Adult Appointments</h4>
+                                        <h4>Business Appointments</h4>
                                         <div class="box_right d-flex lms_block">
                                             <div class="serach_field_2">
                                                 <div class="search_inner">

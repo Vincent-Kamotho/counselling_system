@@ -59,9 +59,9 @@
                                     <div class="main-title">
                                         <h3 class="m-0">Appointments</h3>
                                     </div>
-                                    @if(session()->has('message'))
+                                    @if(session()->has('success'))
                                         <div class="alert alert-success">
-                                            {{ session()->get('message') }}
+                                            {{ session()->get('success') }}
                                         </div>
                                     @endif
                                 </div>

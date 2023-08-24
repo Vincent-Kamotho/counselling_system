@@ -28,26 +28,13 @@
                         <a href="#"><span class="fa fa-paper-plane mr-1"></span> <span class="__cf_email__">vincentwambuguvw97@gmail.com</span></a>
                     </p>
                 </div>
-                <div class="col-md-6 d-flex justify-content-md-end">
-                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-                        </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index-2.html">Counselor</a>
+            <a class="navbar-brand" href="{{url('/')}}">Counselor</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -88,10 +75,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-4 d-flex">
-                    <div class="intro aside-stretch d-lg-flex w-100">
-                        <div class="icon">
-                            <span class="flaticon-checklist"></span>
-                        </div>
+                    <div class="intro aside-stretch d-lg-flex w-100"> 
                         <div class="text">
                             <h2>100% Confidential</h2>
                             <p>You can trust that our discussions will remain strictly confidential, ensuring your privacy and
@@ -101,9 +85,6 @@
                 </div>
                 <div class="col-md-4 d-flex">
                     <div class="intro color-1 d-lg-flex w-100">
-                        <div class="icon">
-                            <span class="flaticon-employee"></span>
-                        </div>
                         <div class="text">
                             <h2>Qualified Team</h2>
                             <p>You can rely on our experienced and highly skilled team to provide you with expert guidance and support tailored to your needs.</p>
@@ -112,9 +93,6 @@
                 </div>
                 <div class="col-md-4 d-flex">
                     <div class="intro color-2 d-lg-flex w-100">
-                        <div class="icon">
-                            <span class="flaticon-umbrella"></span>
-                        </div>
                         <div class="text">
                             <h2>Individual Approach</h2>
                             <p>We believe in a personalized and individualized approach, tailoring our guidance and support to your unique circumstances and goals.</p>
@@ -487,47 +465,26 @@
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Explore</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>What We Do</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('/')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                            <li><a href="{{url('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                            <li><a href="{{url('counsellor')}}"><span class="fa fa-chevron-right mr-2"></span>Counselor</a></li>
+                            <li><a href="{{url('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                            <li><a href="{{url('pricing')}}"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Legal</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Join us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Company</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
+                
                 <div class="col-sm-12 col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
-                                        View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
-                                            210</span></a></li>
-                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                                <li><a href="tel:0708683439"><span class="icon fa fa-phone"></span><span class="text">+254 708 683 439</span></a></li>
+                                <li><a href="mailto:vincentwambuguvw97@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span
                                             class="text"><span class="__cf_email__"
-                                                data-cfemail="e68f888089a69f89939482898b878f88c885898b">[email&#160;protected]</span></span></a>
+                                                data-cfemail="e68f888089a69f89939482898b878f88c885898b">vincentwambuguvw97@gmail.com</span></span></a>
                                 </li>
                             </ul>
                         </div>

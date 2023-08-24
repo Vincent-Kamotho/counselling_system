@@ -28,7 +28,7 @@
             </a>
             <ul>
                 <li><a href="{{url('admin/adult_appointments')}}">Adults</a></li>
-                <li><a href="{{url('admin/children_appointments')}}">Children</a></li>
+                {{-- <li><a href="{{url('admin/children_appointments')}}">Children</a></li> --}}
                 <li><a href="{{url('admin/business_appointments')}}">Business</a></li>
             </ul>
         </li>

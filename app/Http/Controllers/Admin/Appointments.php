@@ -90,18 +90,39 @@ class Appointments extends Controller
 
     public function DeclineChildrenAppointment($id)
     {
+
         $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->get();
 
-        $declinedRecord = $appointmentDecline->map(function($record){
-            $record->status = 'Declined';
-            return (array) $record;
-        })->all();
+        if($appointmentDecline){
+            
+            $appointmentData = (array) $appointmentDecline;
+            unset($appointmentData['id']);
 
-        DB::table('appointments')->insert($declinedRecord);
+            //Add the 'status' field with 'Declined' value 
+            $appointmentData['status'] = 'Declined';
 
-        DB::table('children_counsellings')->where('id' , $id)->delete();
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
 
-        return redirect()->back()->with('success','Appointment Declined');
+            //Delete the declined appointment from the 'children_counsellings' table
+            DB::table('children_counsellings')->where('id' , $id)->delete();
+
+            return redirect()->back()->with('success','Appointment Declined');
+        }
+
+
+        // $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->get();
+
+        // $declinedRecord = $appointmentDecline->map(function($record){
+        //     $record->status = 'Declined';
+        //     return (array) $record;
+        // })->all();
+
+        // DB::table('appointments')->insert($declinedRecord);
+
+        // DB::table('children_counsellings')->where('id' , $id)->delete();
+
+        // return redirect()->back()->with('success','Appointment Declined');
     }
 
     public function ApproveBusinessAppointment($id)
@@ -122,18 +143,25 @@ class Appointments extends Controller
 
     public function DeclineBusinessAppointment($id)
     {
-        $appointmentDecline = DB::table('business_counsellings')->where('id' , $id)->get();
 
-        $declinedRecord = $appointmentDecline->map(function($record){
-            $record->status = 'Declined';
-            return (array) $record;
-        })->all();
+        $appointmentDecline = DB::table('business_counsellings')->where('id' , $id)->first();
 
-        DB::table('appointments')->insert($declinedRecord);
+        if ($appointmentDecline){
 
-        DB::table('business_counselling')->where('id' , $id)->delete();
+            $appointmentData = (array) $appointmentDecline;
+            unset($appointmentData['id']);
 
-        return redirect()->back()->with('success','Appointment Declined');
+            //Add the 'status' field with 'Declined' value
+            $appointmentData['status'] = 'Declined';
+
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
+
+            DB::table('business_counsellings')->where('id' , $id)->delete();
+
+            return redirect()->back()->with('success','Appointment Declined');
+        }
+        
     }
 
     public function schedule()

@@ -26,23 +26,9 @@
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center">
                     <p class="mb-0 phone pl-md-2">
-                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +254 708 683 439</a>
-                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> <span class="__cf_email__">vincentwambuguvw97@gmail.com</span></a>
+                        <a href="tel:0708683439" class="mr-2"><span class="fa fa-phone mr-1"></span> +254 708 683 439</a>
+                        <a href="mailto:vincentwambuguvw97@gmail.com"><span class="fa fa-paper-plane mr-1"></span> <span class="__cf_email__">vincentwambuguvw97@gmail.com</span></a>
                     </p>
-                </div>
-                <div class="col-md-6 d-flex justify-content-md-end">
-                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -95,20 +81,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -124,20 +97,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -153,20 +113,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -182,20 +129,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -211,20 +145,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -240,20 +161,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -269,20 +177,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -298,20 +193,7 @@
                             <span class="position mb-2">Counselor</span>
                             <div class="faded">
                                 <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                                <ul class="ftco-social text-center">
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-twitter"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-facebook"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-google"></span></a></li>
-                                    <li class="ftco-animate"><a href="#"
-                                            class="d-flex align-items-center justify-content-center"><span
-                                                class="fa fa-instagram"></span></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -338,7 +220,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Couples Therapy</li>
                                 <li><span class="fa fa-check mr-2"></span>Family Therapy</li>
                             </ul>
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            {{-- <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a> --}}
                         </div>
                     </div>
                 </div>
@@ -352,7 +234,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Behavioral Management</li>
                                 <li><span class="fa fa-check mr-2"></span>Educational Counseling</li>
                             </ul>
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            {{-- <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a> --}}
                         </div>
                     </div>
                 </div>
@@ -366,7 +248,7 @@
                                 <li><span class="fa fa-check mr-2"></span>Employee Counseling</li>
                                 <li><span class="fa fa-check mr-2"></span>Psychological Assessment</li>
                             </ul>
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+                            {{-- <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a> --}}
                         </div>
                     </div>
                 </div>
@@ -376,51 +258,31 @@
     <footer class="ftco-footer">
         <div class="container">
             <div class="row mb-5">
+                
                 <div class="col-sm-12 col-md">
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Explore</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>What We Do</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('/')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                            <li><a href="{{url('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                            <li><a href="{{url('counsellor')}}"><span class="fa fa-chevron-right mr-2"></span>Counselor</a></li>
+                            <li><a href="{{url('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                            <li><a href="{{url('pricing')}}"><span class="fa fa-chevron-right mr-2"></span>Plans &amp; Pricing</a></li>
+                            <li><a href="{{url('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Legal</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Join us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Company</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
+                
                 <div class="col-sm-12 col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
-                                        View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
-                                            210</span></a></li>
-                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                                <li><a href="tel:0708683439"><span class="icon fa fa-phone"></span><span class="text">+254 708 683 439</span></a></li>
+                                <li><a href="mailto:vincentwambuguvw97@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span
                                             class="text"><span class="__cf_email__"
-                                                data-cfemail="224b4c444d625b4d5750464d4f434b4c0c414d4f">[email&#160;protected]</span></span></a>
+                                                data-cfemail="e68f888089a69f89939482898b878f88c885898b">vincentwambuguvw97@gmail.com</span></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -428,7 +290,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>>
 
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
