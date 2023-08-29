@@ -122,6 +122,11 @@
                             <div class="col-md-7">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h3 class="mb-4">Contact Us</h3>
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('success') }}
+                                        </div>
+                                    @endif
                                     <form method="POST" action="{{url('email')}}" class="contactForm">
                                         @csrf
                                         <div class="row">

@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\AdultCounselling;
+use App\Mail\AppointmentDeclined;
 use Illuminate\Support\Facades\DB;
 use App\Models\BusinessCounselling;
 use App\Models\ChildrenCounselling;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class Appointments extends Controller
 {
@@ -58,18 +60,27 @@ class Appointments extends Controller
 
     public function DeclineAdultAppointment($id)
     {
-        $appointmentDecline = DB::table('adult_counsellings')->where('id' , $id)->get();
 
-        $declinedRecord = $appointmentDecline->map(function ($record){
-            $record->status = 'Declined';
-            return (array) $record;
-        })->all();
+        $appointmentDecline = DB::table('adult_counsellings')->where('id' , $id)->first();
 
-        DB::table('appointments')->insert($declinedRecord);
+        if($appointmentDecline){
+            
+            $appointmentData = (array) $appointmentDecline;
+            unset($appointmentData['id']);
 
-        DB::table('adult_counsellings')->where('id' , $id)->delete();
+            //Add the 'status' field with 'Declined' value 
+            $appointmentData['status'] = 'Declined';
+            dd($appointmentData);
 
-        return redirect()->back()->with('success','Appointment Declined');
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
+            Mail::to($appointmentDecline->email)->send(new AppointmentDeclined($appointmentDecline));
+
+            //Delete the declined appointment from the 'children_counsellings' table
+            DB::table('adult_counsellings')->where('id' , $id)->delete();
+            return redirect()->back()->with('success','Appointment Declined');
+        }
+
     }
 
     public function ApproveChildrenAppointment($id)
@@ -91,7 +102,7 @@ class Appointments extends Controller
     public function DeclineChildrenAppointment($id)
     {
 
-        $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->get();
+        $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->first();
 
         if($appointmentDecline){
             
@@ -109,20 +120,6 @@ class Appointments extends Controller
 
             return redirect()->back()->with('success','Appointment Declined');
         }
-
-
-        // $appointmentDecline = DB::table('children_counsellings')->where('id' , $id)->get();
-
-        // $declinedRecord = $appointmentDecline->map(function($record){
-        //     $record->status = 'Declined';
-        //     return (array) $record;
-        // })->all();
-
-        // DB::table('appointments')->insert($declinedRecord);
-
-        // DB::table('children_counsellings')->where('id' , $id)->delete();
-
-        // return redirect()->back()->with('success','Appointment Declined');
     }
 
     public function ApproveBusinessAppointment($id)
@@ -156,6 +153,8 @@ class Appointments extends Controller
 
             //Insert the modified appointment data into the 'appointments' table
             DB::table('appointments')->insert($appointmentData);
+
+            Mail::to($appointmentDecline->email)->send(new AppointmentDeclined($appointmentDecline));
 
             DB::table('business_counsellings')->where('id' , $id)->delete();
 

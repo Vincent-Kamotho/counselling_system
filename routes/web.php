@@ -76,5 +76,5 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('schedule', [App\Http\Controllers\Admin\Appointments::class, 'schedule']);
 });
 
-Route::post('email', [App\Http\Controllers\AppointmentsController::class, 'receivemail']);
+Route::post('email', [App\Http\Controllers\AppointmentsController::class, 'ReceiveMail']);
 

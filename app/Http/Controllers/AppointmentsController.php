@@ -83,20 +83,12 @@ class AppointmentsController extends Controller
         $business_counselling->service = $request->input('service');
 
         $business_counselling->save();
-        return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
+        return redirect()->back()->with('success' ,' Your Application has been made. An email will be sent to you in response for the confirmation');
 
     }
 
-    public function receivemail(Request $request)
+    public function ReceiveMail(Request $request)
     {
-        // $name = $request->input('name');
-        // $email = $request->input('email');
-        // $subject = $request->input('subject');
-        // $message = $request->input('message');
-
-        // Mail::to($email)
-        // ->send(new ReceiveMail());
-
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -104,31 +96,10 @@ class AppointmentsController extends Controller
             'message' => 'required'
         ]);
 
-        if($this->isOnline()){
-            $mail_data = [
-                'recipient' => 'vinsentwambugu@gmail.com',
-                'fromEmail' => $request->email,
-                'fromName' => $request->name,
-                'subject' => $request->subject,
-                'message' => $request->message
-            ];
-            \Mail::send('mail.receivemail',$mail_data, function($message) use ($mail_data){
-                $message->to($mail_data['recipient'])
-                        ->from($mail_data['fromEmail'], $mail_data['fromName'])
-                        ->subject($mail_data['subject']);
-            });
+        $data = $request->all();
 
-            return redirect()->back()->with('success' , 'Email sent');
-        }else{
-            return redirect()->back()->withInput()->with('error', 'Check your internet connection'); 
-        }
-    }
+        Mail::to('vinsentwambugu@gmail.com')->send(new ReceiveMail($data));
 
-    public function isOnline($site = "https://youtube.com/"){
-        if(@fopen($site, "r")){
-            return true;
-        }else{
-            return false;
-        }
+        return redirect()->back()->with('success', 'Email sent successfully');
     }
 }
