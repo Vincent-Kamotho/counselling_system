@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\AppointmentApproved;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\AdultCounselling;
@@ -44,18 +45,24 @@ class Appointments extends Controller
 
     public function ApproveAdultAppointment($id)
     {
-        $appointmentApproval = DB::table('adult_counsellings')->where('id' , $id)->get();
+        $appointmentApproval = DB::table('adult_counsellings')->where('id' , $id)->first();
 
-        $approvedRecord = $appointmentApproval->map(function ($record){
-            $record->status = 'Approved';
-            return (array) $record;
-        })->all();
+        if($appointmentApproval){
+            
+            $appointmentData = (array) $appointmentApproval;
+            unset($appointmentData['id']);
 
-        DB::table('appointments')->insert($approvedRecord);
+            //Add the 'status' field with 'Approved' value 
+            $appointmentData['status'] = 'Approved';
 
-        DB::table('adult_counsellings')->where('id' , $id)->delete();
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
+            Mail::to($appointmentApproval->email)->send(new AppointmentApproved($appointmentApproval));
 
-        return redirect()->back()->with('success','Appointment Approved');
+            //Delete the approved appointment from the 'adult_counsellings' table
+            DB::table('adult_counsellings')->where('id' , $id)->delete();
+            return redirect()->back()->with('success','Appointment Approved');
+        }
     }
 
     public function DeclineAdultAppointment($id)
@@ -70,7 +77,6 @@ class Appointments extends Controller
 
             //Add the 'status' field with 'Declined' value 
             $appointmentData['status'] = 'Declined';
-            dd($appointmentData);
 
             //Insert the modified appointment data into the 'appointments' table
             DB::table('appointments')->insert($appointmentData);
