@@ -33,7 +33,7 @@ class AppointmentsController extends Controller
         $adult_counselling->service = $request->input('service');
 
         $adult_counselling->save();
-        return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
+        return redirect()->back()->with('success' ,' Your Application has been sent. An email will be sent to you in response for the confirmation');
     }
 
     public function SaveChildAppointment(Request $request)
@@ -58,7 +58,7 @@ class AppointmentsController extends Controller
         $children_counselling->service = $request->input('service');
 
         $children_counselling->save();
-        return redirect()->back()->with('success' ,' Your Application has been made. Please wait for the confirmation');
+        return redirect()->back()->with('success' ,' Your Application has been sent. An email will be sent to you in response for the confirmation');
     }
     
     public function SaveBusinessAppointment(Request $request)
@@ -83,7 +83,7 @@ class AppointmentsController extends Controller
         $business_counselling->service = $request->input('service');
 
         $business_counselling->save();
-        return redirect()->back()->with('success' ,' Your Application has been made. An email will be sent to you in response for the confirmation');
+        return redirect()->back()->with('success' , 'Your Application has been sent. An email will be sent to you in response for the confirmation');
 
     }
 

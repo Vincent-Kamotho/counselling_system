@@ -74,6 +74,15 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('children_appointments', [App\Http\Controllers\Admin\Appointments::class , 'ChildrenAppointment']);
     Route::get('business_appointments', [App\Http\Controllers\Admin\Appointments::class, 'BusinessAppointment']);
     Route::get('schedule', [App\Http\Controllers\Admin\Appointments::class, 'schedule']);
+
+    Route::group(['prefix' => 'counsellors'], function(){
+        Route::get('list', [App\Http\Controllers\Admin\Counsellors::class, 'index']);
+        Route::get('add', [App\Http\Controllers\Admin\Counsellors::class, 'create']);
+        Route::post('save', [App\Http\Controllers\Admin\Counsellors::class, 'store']);
+        Route::get('edit/{id}', [App\Http\Controllers\Admin\Counsellors::class, 'edit']);
+        Route::post('update/{id}', [App\Http\Controllers\Admin\Counsellors::class, 'update']);
+        Route::get('delete/{id}', [App\Http\Controllers\Admin\Counsellors::class, 'destroy']);
+    });
 });
 
 Route::post('email', [App\Http\Controllers\AppointmentsController::class, 'ReceiveMail']);

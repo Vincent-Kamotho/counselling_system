@@ -44,21 +44,19 @@
                 
             </ul>
         </li>
-        {{-- <li class>
+        <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{{asset('assets/admin/img/menu-icon/4.svg')}}" alt>
                 </div>
-                <span>forms</span>
+                <span>Staff</span>
             </a>
             <ul>
-                <li><a href="Basic_Elements.html">Basic Elements</a></li>
-                <li><a href="Groups.html">Groups</a></li>
-                <li><a href="Max_Length.html">Max Length</a></li>
-                <li><a href="Layouts.html">Layouts</a></li>
+                <li><a href="{{url('admin/counsellors/list')}}">Counsellors</a></li>
+                
             </ul>
         </li>
-        <li class>
+        {{-- <li class>
             <a href="Board.html" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{{asset('assets/admin/img/menu-icon/5.svg')}}" alt>

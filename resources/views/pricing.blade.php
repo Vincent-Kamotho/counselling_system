@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 ftco-animate d-flex">
+                <div class="col-md-6 ftco-animate d-flex">
                     <div class="block-7 w-100">
                         <div class="text-center">
                             <span class="price"><sup>$</sup> <span class="number">49</span> <sub>/mo</sub></span>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 ftco-animate d-flex">
+                {{--<div class="col-md-4 ftco-animate d-flex">
                     <div class="block-7 w-100">
                         <div class="text-center">
                             <span class="price"><sup>$</sup> <span class="number">79</span> <sub>/mo</sub></span>
@@ -104,8 +104,8 @@
                             <a href="{{url('children/children_counselling')}}" class="btn btn-primary d-block px-2 py-3">Get Started</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 ftco-animate d-flex">
+                </div>--}}
+                <div class="col-md-6 ftco-animate d-flex">
                     <div class="block-7 w-100">
                         <div class="text-center">
                             <span class="price"><sup>$</sup> <span class="number">109</span> <sub>/mo</sub></span>

@@ -91,18 +91,24 @@ class Appointments extends Controller
 
     public function ApproveChildrenAppointment($id)
     {
-        $appointmentApprove = DB::table('children_counsellings')->where('id' , $id)->get();
+        $appointmentApproval = DB::table('children_counsellings')->where('id' , $id)->first();
 
-        $approvedRecord = $appointmentApprove->map(function($record){
-            $record->status = 'Approved';
-            return (array) $record;
-        })->all();
+        if($appointmentApproval){
+            
+            $appointmentData = (array) $appointmentApproval;
+            unset($appointmentData['id']);
 
-        DB::table('appointments')->insert($approvedRecord);
+            //Add the 'status' field with 'Approved' value 
+            $appointmentData['status'] = 'Approved';
 
-        DB::table('children_counsellings')->where('id' , $id)->delete();
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
+            Mail::to($appointmentApproval->email)->send(new AppointmentApproved($appointmentApproval));
 
-        return redirect()->back()->with('success','Appointment Approved');
+            //Delete the declined appointment from the 'children_counsellings' table
+            DB::table('children_counsellings')->where('id' , $id)->delete();
+            return redirect()->back()->with('success','Appointment Declined');
+        }
     }
 
     public function DeclineChildrenAppointment($id)
@@ -130,18 +136,25 @@ class Appointments extends Controller
 
     public function ApproveBusinessAppointment($id)
     {
-        $appointmentApproval = DB::table('business_counsellings')->where('id' , $id)->get();
 
-        $approvedRecord = $appointmentApproval->map(function($record){
-            $record->status = 'Approved';
-            return (array) $record;
-        })->all();
+        $appointmentApproval = DB::table('business_counsellings')->where('id' , $id)->first();
 
-        DB::table('appointments')->insert($approvedRecord);
+        if($appointmentApproval){
+            
+            $appointmentData = (array) $appointmentApproval;
+            unset($appointmentData['id']);
 
-        DB::table('business_counsellings')->where('id' , $id)->delete();
+            //Add the 'status' field with 'Approved' value 
+            $appointmentData['status'] = 'Approved';
 
-        return redirect()->back()->with('success', 'Appointment Approved');
+            //Insert the modified appointment data into the 'appointments' table
+            DB::table('appointments')->insert($appointmentData);
+
+            //Delete the approved appointment from the 'business_counsellings' table
+            DB::table('business_counsellings')->where('id' , $id)->delete();
+
+            return redirect()->back()->with('success','Appointment Approved');
+        }
     }
 
     public function DeclineBusinessAppointment($id)
