@@ -60,10 +60,10 @@ Route::group(['prefix' => 'schedule'], function(){
 
 Route::get('admin/home', function(){
     return view('admin.dashboard');
-});
+})->middleware('auth' , 'is_admin');
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth' , 'is_admin']], function(){
     Route::get('adult_appointments', [App\Http\Controllers\Admin\Appointments::class, 'AdultAppointment']);
     Route::get('approve_adult_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'ApproveAdultAppointment']);
     Route::get('decline_adult_appointment/{id}',[App\Http\Controllers\Admin\Appointments::class, 'DeclineAdultAppointment']);
@@ -87,3 +87,13 @@ Route::group(['prefix' => 'admin'], function(){
 
 Route::post('email', [App\Http\Controllers\AppointmentsController::class, 'ReceiveMail']);
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

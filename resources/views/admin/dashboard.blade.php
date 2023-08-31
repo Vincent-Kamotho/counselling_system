@@ -52,11 +52,32 @@
             <div class="container-fluid p-0 ">
         
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-10">
                         <div class="page_title_box d-flex align-items-center justify-content-between">
                             <div class="page_title_left">
                                 <h3 class="f_s_30 f_w_700 text_white">Dashboard</h3>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="page_title_box d-flex align-items-center justify-content-between">
+                            <div class="page_title_left">
+                                <a href="{{url('/')}}" class="btn btn-success">Go to Website</a>
+                                {{-- <a href="{{url('logout')}}" class="btn btn-danger">Logout</a> --}}
+                                
+                            </div>
+
+                            {{-- <div class="page_title_left">
+                                <form method="POST" action="{{ route('logout') }}" x-data>
+                                    @csrf
+    
+                                    <x-jet-dropdown-link class="btn btn-danger" href="{{ route('logout') }}"
+                                             @click.prevent="$root.submit();">
+                                        {{ __('Log Out') }}
+                                    </x-jet-dropdown-link>
+                                </form>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

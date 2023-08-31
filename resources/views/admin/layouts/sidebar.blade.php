@@ -1,6 +1,6 @@
 <nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-between">
-        <a href="index.html"><img src="{{asset('assets/admin/img/logo.png')}}" alt></a>
+        <a href="{{url('admin/home')}}"><img src="{{asset('assets/admin/img/logo.png')}}" alt></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="ti-close"></i>
         </div>
@@ -13,11 +13,6 @@
                 </div>
                 <span>Dashboard</span>
             </a>
-            {{-- <ul>
-                <li><a class="active" href="">Sales</a></li>
-                <li><a href="">Default</a></li>
-                <li><a href="">Dark Menu</a></li>
-            </ul> --}}
         </li>
         <li class>
             <a class="has-arrow" href="#" aria-expanded="false">

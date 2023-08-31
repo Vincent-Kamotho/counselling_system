@@ -51,7 +51,11 @@
             </div>
         </div>
     </nav>
-
+    @if(session()->has('error'))
+    <div class="alert alert-danger" style="color:red">
+        {{ session()->get('error') }}
+    </div>
+    @endif
     <div class="hero-wrap" style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
